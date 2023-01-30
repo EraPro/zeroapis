@@ -74,7 +74,7 @@ cron.schedule('0 0 0 * * *', () => {
     ResetRequestToday()
   }, {
     scheduled: true,
-    timezone: "Asia/Kuala_Lumpur"
+    timezone: "Asia/Jakarta"
   });
   
   //Reset All User Apikey Limit setiap sebulan
@@ -82,7 +82,7 @@ cron.schedule('0 0 0 * * *', () => {
     resetapi()
   }, {
     scheduled: true,
-    timezone: "Asia/Kuala_Lumpur"
+    timezone: "Asia/Jakarta"
   });
 
 //_______________________ ┏ Code ┓ _______________________\\
