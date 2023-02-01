@@ -9,7 +9,7 @@
     <meta name="description" content="Rest Api website">
     <meta name="author" content="Alip">
     <meta property="og:image" content="https://telegra.ph/file/f492065d44c897cd3836e.png">
-    <title>Alpis APIs │ Docs</title>
+    <title>Zero APIs │ Docs</title>
     <script src="https://kit.fontawesome.com/5367cb78eb.js" crossorigin="anonymous"></script>
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -35,10 +35,10 @@
                 <a class="nav-link" >
                     <span>Username: <%= username %><br></span>
                                         <% if(!verified){ %>
-                                            <span class="h5 mb-0 font-weight-bold">Not Verified❌<br></span>
+                                            <span class="h5 mb-0 font-weight-bold">Verifikasi : 🔓<br></span>
 
                                             <% }else{ %>
-                                                <span class="h5 mb-0 font-weight-bold">Verified✔️<br></span>
+                                                <span class="h5 mb-0 font-weight-bold">Verifikasi: 🔐<br></span>
                                             <% } %>
 
                 </a>
@@ -320,13 +320,13 @@
                 </div>
                 <br>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/AlipBot">
+                    <a class="nav-link" href="https://github.com/EraPro">
                         <i class="fab fa-fw fa-github"></i>
                         <span>Github</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://instagram.com/alipje29">
+                    <a class="nav-link" href="https://instagram.com/zerogaming05">
                         <i class="fab fa-fw fa-instagram"></i>
                         <span>Instagram</span>
                     </a>
@@ -344,15 +344,18 @@
                     <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="/logout">
-                                <i class="fa-solid fa-right-from-bracket" > </i> 
-                                <span class="text-sm-left mb-0 font-weight-bold"> Log Out </span>
-                                
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="img/user.png" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex"><%= username %></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                         
+                            <a href="/logout" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
                 </nav>
 
                 <% if(!verified){ %>
