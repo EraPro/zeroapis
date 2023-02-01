@@ -83,7 +83,7 @@ router.get('/cekapikey', async (req, res, next) => {
 			} else if(db.limitApikey === 0) {
 				return res.json({ status : false, creator : `${creator}`, message : "[!] Apikey Sudah Habis"})  
 		}
-	}
+	})
 
 
 
