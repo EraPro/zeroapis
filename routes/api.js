@@ -71,6 +71,23 @@ async function limitapikey(apikey) {
 }
 
 
+router.get('/cekapikey', async (req, res, next) => {
+		var apikey = req.query.apikey
+	if (!apikey ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter apikey"})  
+
+    let db = await User.findOne({apikey: apikey});
+    if(db === null) {
+		return res.json({ status : false, creator : `${creator}`, message : "[!] Apikey Tidak Wujud"})  
+		} else if(!db.isVerified) {
+				return res.json({ status : false, creator : `${creator}`, message : "[!] Sila Verify Email dulu sebelum guna apikey"})  
+			} else if(db.limitApikey === 0) {
+				return res.json({ status : false, creator : `${creator}`, message : "[!] Apikey Sudah Habis"})  
+		}
+	}
+
+
+
+
 
 //―――――――――――――――――――――――――――――――――――――――――― ┏  Dowloader  ┓ ―――――――――――――――――――――――――――――――――――――――――― \\
 
