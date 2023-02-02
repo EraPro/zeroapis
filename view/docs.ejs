@@ -473,89 +473,29 @@
                         </div>
                     </div>
 
-                       <div class="col-sm-6 col-xl-4">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa bi-wifi fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Your IP</p>
-                                <h6 class="mb-0" id="ip"></h6>
+                       <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card h-50">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1">Battery</div>
+                                        <span id="battery_level" class="h5 mb-0 font-weight-bold">Waiting... </span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa fa-battery-full fa-2xl" ></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-<div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Browser Info</h6>
-                            <p class="h6"></p>
-                            <script data-cfasync="false" src="../js/email-decode.min.js"></script><script>
-                                arrBulan = [
-                                "Januari",
-                                "Februari",
-                                "Maret",
-                                "April",
-                                "Mei",
-                                "Juni",
-                                "Juli",
-                                "Agustus",
-                                "September",
-                                "Oktober",
-                                "November",
-                                "Desember",
-                                ];
-                                var txt = "";
-                                txt +=
-                                "<p><b>Browser CodeName</b>: " +
-                                navigator.appCodeName +
-                                "</p>";
-                                txt +=
-                                "<p><b>Browser Name</b>: " + navigator.appName + "</p>";
-                                txt +=
-                                "<p><b>Langueage </b>: " + window.navigator.language +"</p>";
-                                txt +=
-                                "<p><b>Web Driver</b>: " + navigator.webdriver + "</p>";
-                                txt +=
-                                "<p><b>Cookies Enabled</b>: " + navigator.cookieEnabled + "</p>";
-                                txt +=
-                                "<p><b>Browser Online</b>: " + navigator.onLine + "</p>";
-                                txt +=
-                                "<p><b>Platform</b>: " + navigator.platform + "</p>";
-                                txt +=
-                                "<p><b>User-agent header</b>: " + navigator.userAgent + "</p>";
-                                document.write(txt);
-                                </script>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Device Info</h6>
-                            <p class="h6"></p>
-                            <script data-cfasync="false" src="../js/email-decode.min.js"></script><script>
-                                var txt = "";
-                                txt +=
-                                "<p><b>Memory</b>: " + navigator.deviceMemory + "</p>";
-                                txt +=
-                                "<p><b>Product </b>: " + navigator.product + "</p>";
-                                txt +=
-                                "<p><b>Product Sub</b>: " + navigator.productSub +"</p>";
-                                txt +=
-                                "<p><b>Vendor</b>: " + navigator.vendor + "</p>";
-                                txt +=
-                                "<p><b>Version</b>: " + navigator.appVersion + "</p>";
-                                document.write(txt);
-                                </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card h-50">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-uppercase mb-1">Jam</div>
-                                        <div class="h5 mb-0 font-weight-bold" id="row-no-guttersalign-items-center">00:00:00</div>
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1">IP :</div>
+                                        <div class="h5 mb-0 font-weight-bold" id="row-no-guttersalign-items-center"><h6 class="mb-0" id="ip"></h6></div>
 
                                     </div>
                                     <div class="col-auto">
@@ -604,7 +544,13 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
+ 
+    <script>
+        $.getJSON("https://api.ipify.org?format=json",
+          function(data) {
+            $("#ip").html(data.ip);
+          })
+      </script>
           
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
